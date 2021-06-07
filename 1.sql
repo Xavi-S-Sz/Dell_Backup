@@ -1,0 +1,6 @@
+CREATE or REPLACE FUNCTION del_under18()
+
+returns SETOF INTEGER AS $$
+DELETE FROM CUSTOMERS WHERE AGE<18
+RETURNING customerid;
+$$ language sql;
